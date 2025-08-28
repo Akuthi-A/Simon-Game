@@ -6,7 +6,7 @@ The player must repeat an ever-growing sequence of colors and sounds. Each round
 ---
 
 ## 🚀 Demo
-🔗 [Live Demo](https://akuthi-a.github.io/simon-game/)  
+🔗 [Live Demo]([(https://akuthi-a.github.io/Simon-Game/)])  
 
 ---
 

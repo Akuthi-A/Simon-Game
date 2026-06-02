@@ -40,6 +40,11 @@ body {
   .container {
     gap: 15px;
   }
+
+  #instructions {
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+}
 }
 
 .start-container {

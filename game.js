@@ -6,7 +6,8 @@ let start = false;
 
 function startOver() {
     gamePattern = [];
-    level = 0
+    userClickedPattern = [];
+    level = 0;
     start = false;
 }
 
@@ -22,13 +23,13 @@ jQuery(document).on("keydown", function() {
 
 
 jQuery(".btn").click(function () {
-    let lastElement = userClickedPattern.length - 1;
+    
     let userChosenColour = this.id;
     userClickedPattern.push(userChosenColour);
 
 
     animatePress(userChosenColour);
-    checkAnswer(lastElement);
+    checkAnswer(userClickedPattern.length - 1);
 
     playAudio(userChosenColour);
 })
@@ -74,27 +75,26 @@ function animatePress(currentColour) {
 
 
 
-function checkAnswer(currentLevel) {
-    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+function checkAnswer(index) {
+    if (userClickedPattern[index] === gamePattern[index]) {
 
-        if (userClickedPattern.length === gamePattern.length) {
-            setTimeout(function() {
-                nextSequence();
-            }, 1000)
+        if (index === gamePattern.length - 1) {
+            setTimeout(nextSequence, 1000);
         }
+
     } else {
         console.log("wrong");
         let wrong = new Audio("./sounds/wrong.mp3");
         wrong.play();
 
-        let body = jQuery("body");
-        body.addClass("game-over");
+        $("body").addClass("game-over");
 
-        setTimeout(function() {
-            body.removeClass("game-over");
-        }, 200)
+        setTimeout(function () {
+            $("body").removeClass("game-over");
+        }, 200);
 
-        jQuery("h1").text("Game Over, Press Any Key to Restart");
+        $("h1").text("Game Over, Press Any Key to Restart");
+
         startOver();
     }
 }

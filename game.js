@@ -17,11 +17,13 @@ function startGame() {
     if (!start) {
         start = true;
         nextSequence();
+        jQuery("#start-btn").hide();
     }
 }
 
 jQuery(document).on("keydown", startGame);
-jQuery(document).on("touchstart", startGame);
+
+jQuery("#start-btn").on("click", startGame);
 
 
 jQuery(".btn").click(function () {
@@ -96,7 +98,7 @@ function checkAnswer(index) {
         }, 200);
 
         $("h1").text("Game Over, Press Any Key to Restart");
-
+        jQuery("#start-btn").show();
         startOver();
     }
 }

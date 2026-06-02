@@ -82,6 +82,7 @@ body {
 
 #instructions {
   color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
 }
 .game-over {
   background-color: red;

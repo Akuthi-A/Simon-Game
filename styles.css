@@ -47,7 +47,7 @@ body {
 @media (max-width: 600px) {
   body {
     justify-content: flex-start;
-    padding-top: 20px;
+    padding-top: 50px;
   }
   .btn {
     width: 120px;

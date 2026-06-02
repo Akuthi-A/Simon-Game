@@ -13,13 +13,15 @@ function startOver() {
 
 
 
-jQuery(document).on("keydown", function() {
+function startGame() {
     if (!start) {
-        nextSequence();
         start = true;
+        nextSequence();
     }
-    
-})
+}
+
+jQuery(document).on("keydown", startGame);
+jQuery(document).on("touchstart", startGame);
 
 
 jQuery(".btn").click(function () {

@@ -18,6 +18,7 @@ function startGame() {
         start = true;
         nextSequence();
         jQuery("#start-btn").hide();
+        jQuery("#instructions").hide();
     }
 }
 
@@ -99,6 +100,7 @@ function checkAnswer(index) {
 
         $("h1").text("Game Over, Press Any Key to Restart");
         jQuery("#start-btn").show();
+        jQuery("#instructions").show();
         startOver();
     }
 }

@@ -80,6 +80,9 @@ body {
   transform: scale(0.95);
 }
 
+#instructions {
+  color: #FEF2BF;
+}
 .game-over {
   background-color: red;
   opacity: 0.8;
